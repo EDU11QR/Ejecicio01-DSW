@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Estilos.css" asp-append-version="true" />
+
+</head>
+<body>
+
+    <header>
+        <img class="logo" src="~/IMG/Captura de pantalla 2026-03-26 233005.png"/>
+    </header>
+    <nav>
+        <div class="menu">
+            <a asp-controller="Anime" asp-action="Index" class="menu-item">INICIO</a>
+            <a asp-controller="Naruto" asp-action="Index" class="menu-item">NARUTO</a>
+            <a asp-controller="DragonBall" asp-action="Index" class="menu-item">DRAGON BALL</a>
+            <a asp-controller="OnePiece" asp-action="Index" class="menu-item">ONE PIECE</a>
+        </div>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div style="text-align:center">
+           Catalogo de ANIMES peru S.A.C <br />
+            av. lima 1120-San Juan de Lurigancho <br />
+            telefono : 935 315 177 <br />
+            mail: animeperu@gmail.com <br />
+        </div>
+        <div class="footer-rs">
+            <img src="~/IMG/facebook.jpg" class="rs" />
+            <img src="~/IMG/instagram.jpg" class="rs" />
+            <img src="~/IMG/twitter.jpg" class="rs" />
+        </div>
+    </footer>
+
+</body>
+</html>
