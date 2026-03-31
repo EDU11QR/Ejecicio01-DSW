@@ -1,53 +1,55 @@
 ﻿@model Ejercicio01.Models.ClassCotizar
 @{
-    ViewBag.Title = "sitio oficial de Catalogo de animes";
+    ViewBag.Title = "Sitio oficial de Catálogo de Animes";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
-<h1 style="text-align:center">
-    COTIZA TU ANIME FAVORITO !!!!!!!!!!
-</h1>
-<br />
-<div class="row justify-content-center">
-    <div class="cod-md-4">
-        <form asp-controller="Anime"
-              asp-action="CalculoCotizar">
-            <br />
 
-            <label>Cliente</label>
-            <input asp-for="Cliente" class="form-control"
-                   style="text-align:center" />
-            <br />
+<div class="page-container">
+    <div class="card-anime">
+        <h1 class="page-title">Cotiza tu anime favorito</h1>
+        <p class="page-subtitle">
+            Completa el formulario para calcular el precio de tu cotización.
+        </p>
 
-            <label>Empresa</label>
-            <input asp-for="Empresa" class="form-control"
-                   style="text-align:center" />
-            <br />
+        <form asp-controller="Anime" asp-action="CalculoCotizar" method="post" class="form-grid">
 
-            <label>Cantidad de Animes</label>
-            <input asp-for="Cantidad" class="form-control"
-                   style="text-align:center" />
-            <br />
-            <label>elige tu Anime</label>
-            <select asp-for="Canime">
-                <option value="sel">
-                    seleccione Anime
+            <div class="form-group">
+                <label asp-for="Cliente" class="form-label">Cliente</label>
+                <input asp-for="Cliente" class="form-input" placeholder="Ingrese su nombre" />
+            </div>
 
-                </option>
-                <option value="Dragon01">DragonBall-V1</option>
-                <option value="Dragon02">DragonBall-V2</option>
-                <option value="Dragon03">DragonBall-V3</option>
-                <option value="Naruto01">Naruto-V1</option>
-                <option value="Naruto02">Naruto-V2</option>
-                <option value="Naruto03">Naruto-V3</option>
-                <option value="OnePiece01">OnePiece-V1</option>
-                <option value="OnePiece02">OnePiece-V2</option>
-                <option value="OnePiece03">OnePiece-V3</option>
-                <option value="OnePunch1">OnePunchMan-V1</option>
-                <option value="OnePunch2">OnePunchMan-V2</option>
-                <option value="OnePunch3">OnePunchMan-V3</option>
-            </select>
-            <br />
-            <input type="submit" value="Cotizar" class="btn btn-warning" />
+            <div class="form-group">
+                <label asp-for="Empresa" class="form-label">Empresa</label>
+                <input asp-for="Empresa" class="form-input" placeholder="Ingrese su empresa" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Cantidad" class="form-label">Cantidad de animes</label>
+                <input asp-for="Cantidad" class="form-input" placeholder="Ingrese la cantidad" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Canime" class="form-label">Elige tu anime</label>
+                <select asp-for="Canime" class="form-select">
+                    <option value="">Seleccione un anime</option>
+                    <option value="Dragon01">DragonBall-V1</option>
+                    <option value="Dragon02">DragonBall-V2</option>
+                    <option value="Dragon03">DragonBall-V3</option>
+                    <option value="Naruto01">Naruto-V1</option>
+                    <option value="Naruto02">Naruto-V2</option>
+                    <option value="Naruto03">Naruto-V3</option>
+                    <option value="OnePiece01">OnePiece-V1</option>
+                    <option value="OnePiece02">OnePiece-V2</option>
+                    <option value="OnePiece03">OnePiece-V3</option>
+                    <option value="OnePunch1">OnePunchMan-V1</option>
+                    <option value="OnePunch2">OnePunchMan-V2</option>
+                    <option value="OnePunch3">OnePunchMan-V3</option>
+                </select>
+            </div>
+
+            <div class="actions-center">
+                <input type="submit" value="Cotizar" class="btn-primary" />
+            </div>
 
         </form>
     </div>
